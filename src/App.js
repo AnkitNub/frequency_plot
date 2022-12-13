@@ -1,7 +1,10 @@
 import React from 'react'
+import Data from './components/Data'
 const App = () => {
   return(
-    <div> Hello</div>
+    <div> 
+      <Data/>
+    </div>
   )
 }
 
