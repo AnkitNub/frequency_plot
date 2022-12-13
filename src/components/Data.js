@@ -1,6 +1,11 @@
 import React, {useState} from "react"
+import Histogram from "./Histogram";
+import './Data.css'
 
 const Data = () => {
+const [wordData, setWordData] = useState({});
+const [getData, setGetData] = useState(false);
+
     const fetchText = async() => {
         try{
             const response = await fetch("https://www.terriblytinytales.com/test.txt")
@@ -25,20 +30,30 @@ const Data = () => {
                         borderWidth: 1,
                         barPercentage: 1,
                         categoryPercentage:1,
+                        backgroundColor:  '#9C78B7',
                     },
                 ],
             }
-            console.log(f20_words)
-            console.log(sortedWords)
+             console.log(f20_words)
+            // console.log(sortedWords)
+            setWordData(obj);
+            setGetData(true);
         }catch(e){
+            setGetData(false);
           console.error(e);
         }
     }
-    return(
-        <div>
-            <button onClick={fetchText}>Submit</button>
+    return<>
+        {!getData && (
+        <div className="center">
+            <button className="btn1" onClick={fetchText}>Submit</button>
         </div>
-    )
+        )}
+        {getData && (
+            <div className='small'>
+            <Histogram data={wordData}/>
+            </div> )}
+            </>
 }
 
 export default Data;

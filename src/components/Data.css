@@ -1,0 +1,30 @@
+.btn1{
+    background-color: #081f2d; 
+    border-radius: 29px; 
+    border: 1px solid #081F2D; 
+    color: white; 
+    font-size: 15px; 
+    padding: 10px 45px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    }
+    
+    .btn1:hover{ 
+    background-color: white; 
+    color: #081F2D; 
+    border-color: #081F2D; 
+    transition: 0.3s; 
+   }
+
+.center{
+    position:absolute;
+    top: 50vh;
+    left: 44vw;
+}
+
+.small{
+    position: absolute;
+    top:10vh;
+    left:5vw;
+    width : 1200px;
+}
